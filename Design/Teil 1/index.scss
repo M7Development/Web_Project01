@@ -1,0 +1,441 @@
+$font-size-base:             1rem;              // Bearbeitung der Bootstrab voreinstellungen vor dem Laden der Datei
+$brand: #fed136;                              // Ist für Farbänderung im Design ein absoluter Gamechanger
+$headerheight: 500px;
+$section-padding: 120px;
+$section-color-alternate: #f2f7f7;
+$page-menu-size: 150px;
+
+@import "lib/bootstrap/scss/bootstrap";
+
+.page-header{
+    background-image: url("image/light.jpg");
+   // height: $headerheight;
+    // Herunterskalierung des Bildes
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;              // das führt dazu, dass das hintergrund immer Mittig ist und beim Zommen immer die untere Kante mit angezeigt wird
+}
+
+.card-overlay{                                  // black filter overlay my background image 
+    background: rgba(0, 0, 0, 0.4);
+ //   height: $headerheight;
+}
+
+.navbar-dark .navbar-brand{                     // dadurch wird eine entsprechende Spezifizität erreicht um die Bootstrapvoreinstellugn zu überschreiben!
+    padding-top: 0rem;
+    color: $brand;
+    font-style: italic;
+}
+
+.header-jumbotron{
+        height: $headerheight;
+        padding-top: 0px;
+        padding-bottom: 20px;
+
+        @include media-breakpoint-up(md) {      // Responsive Design
+            height: $headerheight + 150px; }
+        
+        @include media-breakpoint-up(lg) { 
+            height: $headerheight + 200px; }
+
+        @include media-breakpoint-up(xl) { 
+            height: $headerheight + 400px; }
+
+        @include media-breakpoint-up(xxl) { 
+            height: $headerheight + 700px; }
+
+    .display-7{
+        font-style: italic;
+        font-weight: lighter;
+    }
+
+    .display-5{
+        margin-top: 0px;
+        margin-bottom: 60px;
+    }
+
+    .btn-outline-light{                         //Verschachtelung 1. Ebene
+        color: $brand;
+        border-color: $brand;
+
+        &:hover{                                //Verschachtelung 2. Ebene: konnte dadurch das hover von bootstrap ändern
+            color: black;
+            background-color: $brand;
+        }
+    }
+}
+/*--------------------------------------------------------------------ALL SECTIONS--------------------------------------------------------------------------*/
+.section-header-content{
+    font-size: 0.8rem;
+}
+
+/*-------------------------------------------------------------------------- SERVICES ----------------------------------------------------------------------*/
+.services{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    .topic{
+        font-size: 1rem;
+    }
+
+    .topic-content{
+        font-size: 0.6rem;
+        
+    }
+
+    .col{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+
+        .circle{
+            margin-top: 40px;
+            margin-bottom: 12px;
+            height: 50px;
+            width: 50px;
+            background-color: transparent;
+
+            border-style: solid;
+            border-width: 2.5px;
+            border-color: $brand;
+            border-radius: 100%;
+
+            align-self: center;
+            display: flex;
+            justify-content: space-evenly;
+
+            .fas{
+                align-self: center;
+                font-size: 1.6rem;
+                color: $brand;
+            }
+            
+        }
+    }
+}
+/*---------------------------------------------------- PORTFOLIO -------------------------------------------------------------*/
+.portfolio{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: $section-color-alternate;
+
+    .col-12{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        .card{
+            align-self: center;
+        }
+
+        .card{
+            margin-bottom: 3rem;
+        }
+    }
+}
+/*--------------------------------------------------- ABOUT US --------------------------------------------------------------*/
+.aboutUs{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+
+    @include media-breakpoint-up(md) { 
+        .aboutus-div{
+            background: linear-gradient(
+                to right, 
+                white 0%, 
+                white 50%, 
+                $section-color-alternate 50.0%, 
+                $section-color-alternate 50.2%, 
+                white 50.2%, 
+                white 100%
+                );
+        }
+    }
+
+    @include media-breakpoint-up(lg) { 
+        .aboutUs-image{
+            border-radius: 50%;
+            border: 5px solid $section-color-alternate;
+        
+
+            display: block;
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto;    
+        }
+    }
+
+    @include media-breakpoint-up(xl) { 
+        .aboutUs-image{
+            border-radius: 50%;
+            border: 5px solid $section-color-alternate;
+        
+
+            display: block;
+            max-width: 50%;
+            margin-left: auto;
+            margin-right: auto;    
+        }
+    }
+
+    @include media-breakpoint-up(xxl) { 
+        .aboutUs-image{
+            border-radius: 50%;
+            border: 5px solid $section-color-alternate;
+        
+
+            display: block;
+            max-width: 35%;
+            margin-left: auto;
+            margin-right: auto;    
+        }
+    }
+
+
+    .aboutUs-image{
+        border-radius: 50%;
+        border: 5px solid $section-color-alternate;
+    }
+
+}
+/*------------------------------------------------ TEAM ---------------------------------------------------------------*/
+.team{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: $section-color-alternate;
+
+
+        .member-image{
+            border-radius: 50%;
+            border: 6px solid white;
+
+            display: block;
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+
+
+    @include media-breakpoint-up(sm) {
+        .member-image{
+            border-radius: 50%;
+            border: 6px solid white;
+
+            display: block;
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .member-image{
+            border-radius: 50%;
+            border: 6px solid white;
+
+            display: block;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        .member-image{
+            border-radius: 50%;
+            border: 6px solid white;
+            
+            display: block;
+            max-width: 60%;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        .member-image{
+            border-radius: 50%;
+            border: 6px solid white;
+            
+            display: block;
+            max-width: 70%;
+            margin-left: auto;
+            margin-right: auto; 
+        }
+    }
+
+
+    .icons-flex{
+        display: flex;
+        justify-content: center;
+
+        .circle-team-icons{
+            margin-right: 10px;
+            height: 40px;
+            width: 40px;
+            background-color: transparent;
+
+            border-style: solid;
+            border-width: 2.8px;
+            border-color: black;
+            border-radius: 100%;
+
+          /*  align-self: center; */
+            display: flex;
+            justify-content: space-evenly;
+
+            transition: all 1s;
+
+            &:hover{
+                background-color: pink;//$brand;
+
+                transition: all 1s;
+            }
+        }
+
+        .custom-margin{
+            display: flex;
+            justify-content: space-evenly;
+
+            margin-right: 0px;
+        }
+
+        .fab{
+            align-self: center;
+            font-size: 1.3rem;
+            color: black;
+        }
+
+    }
+
+
+}
+/*------------------------------------------------ CONTACT ---------------------------------------------------------------*/
+
+.contact{
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: black;
+    color: white;
+
+
+    .positioning-object{
+        position: relative;
+    }
+
+
+    .contact-message{
+        height: 6rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+        .contact-message{
+            height: 100%; /* Die höhe bezieht sich auf das Position Relative vom nächsten Parent*/
+        }
+    }
+
+    .submit-btn{
+        padding: 10px 20px;
+        background-color: $brand;
+        color: white;
+        font-weight: 600;
+    }
+
+}
+/*------------------------------------------------ FOOTER ---------------------------------------------------------------*/
+
+.footer{                  // Es gibt eine Footer HTML die ich benutzen könnte - siehe Video 184
+    padding-top: 20px;
+    padding-bottom: 5px;
+    background-color: white;
+
+    .modi{
+        margin-bottom: 0px;
+    }
+
+    @include media-breakpoint-up(sm) {
+    padding-bottom: 10px;
+    }
+
+    @include media-breakpoint-up(sm) {
+        padding-bottom: 20px;
+    }
+
+
+
+    .icons-flex{
+        display: flex;
+        justify-content: center;
+
+        .circle-team-icons{
+            margin-right: 10px;
+            height: 40px;
+            width: 40px;
+            background-color: black;
+
+            border-radius: 100%;
+
+          /*  align-self: center; */
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .fab{
+            align-self: center;
+            font-size: 1.2rem;
+            color: white;
+        }
+    }
+}
+
+/*----------------------------------------------- Navigations Bar erstellen -----------------------------*/
+
+html,body{
+    overflow-x: hidden;
+}
+
+body{
+    position: relative;
+}
+
+#page{
+    position: relative;
+    left: 0px;
+    overflow-x: visible;
+    transition: 1s all;
+    transform: translate(0px, 0px);
+    
+    &.mobile-nav-opened{
+        overflow:visible;
+        transform: translate(-$page-menu-size, 0px);
+    }
+}
+
+.mobil-nav{
+    position: fixed;
+    right: -$page-menu-size;
+    width: $page-menu-size;
+    top:    0px;    // Nav-Element beginnt oben bei 0 px Seitenanfang
+    bottom: 0px;    // Nav-Element geht bis unten 0 px Seitenende
+    background-color: $section-color-alternate;
+}
+
+.mobil-nav-link{
+    color: black;
+    border-right: 0px solid transparent;
+    border-left: 0px solid transparent;
+
+    background-color: $section-color-alternate;
+
+
+    &:first-child{
+        border-top-left-radius:     0rem;
+        border-top-right-radius:    0rem;
+    }
+
+    &:last-child{
+        border-bottom-right-radius: 0rem;
+        border-bottom-left-radius: 0rem;
+    }
+}
